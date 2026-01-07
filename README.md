@@ -1,4 +1,4 @@
-# 3.5D Animation Skin Pack
+# 3.5D Animation Skin Packs
 ---
 
 ## Overview
