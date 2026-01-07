@@ -48,6 +48,7 @@ The term *3.5D* is used to describe the method as a "middle man" between proper 
                 "look_at_target": "controller.animation.humanoid.look_at_target",
                 "cape": "animation.player.cape",
                 "move.arms": "animation.player.move.arms",
+                "sneaking": "animation.player.sneak",
                 "move.legs": "animation.player.move.legs",
                 "holding": "animation.player.holding",
                 "attack.positions": "animation.player.attack.positions",
@@ -106,6 +107,7 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 | `humanoid_base_pose` | Base bind pose used for animation layering |
 | `move.arms`          | Arm motion while walking                   |
 | `move.legs`          | Leg motion while walking                   |
+| `sneaking`           | Legs when sneaking                         |
 | `holding`            | Item holding offsets                       |
 | `attack.positions`   | Arm positioning during attacks             |
 | `attack.rotations`   | Swing rotation motion                      |
