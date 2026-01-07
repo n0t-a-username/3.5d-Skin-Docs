@@ -11,12 +11,12 @@ The term *3.5D* is used to describe the method as a "middle man" between proper 
 
 ---
 
-## Key Characteristics
+## Key Characteristics/Limitations
 
 * Uses **existing Mojang player animation assets**
 * No Molang queries or conditionals
 * No scripts, controllers, or state machines
-* No custom animation files
+* No custom animation files (Unless pairing the skin-pack with a resource-pack)
 * Compatible with standard player behavior
 * Works entirely within a skin pack
 
@@ -124,7 +124,7 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 Please note, "enable attachables" also hides tridents or anything geometry based.
 ---
 
-## Limitations
+## Other key Points
 
 * Player animation behavior cannot be altered unless you use custom animations via a texture pack
 * Bones/Limbs cannot be added, only removed
