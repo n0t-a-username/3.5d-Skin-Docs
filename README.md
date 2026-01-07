@@ -111,7 +111,7 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 | `holding`            | Item holding offsets                       |
 | `attack.positions`   | Arm positioning during attacks             |
 | `attack.rotations`   | Swing rotation motion                      |
-| `bob`                | Breathing-styled animation                 |
+| `bob`                | Breathing-styled motion                    |
 | `cape`               | Cape physics                               |
 | `look_at_target`     | Head rotation                              |
 
