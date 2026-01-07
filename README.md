@@ -1,19 +1,38 @@
-## Skin Animation Manipulation (SAA) Method
+# 3.5D Animation Skin Pack
+---
 
-**Getting Started:**
-- SAA is a simplistic system for creating "4D" skins without any game/client modifications or need for 3rd party apps. 
+## Overview
 
-- Its like math, where each animation is a variable, and adding or removing variables will drastically change the outcome.
+This repository documents the **3.5D animation method** for Minecraft Bedrock Skins. The method works by **explicitly binding existing mob animations to player animation channels** through `Skins.json`.
 
-- Nothings set in stone. A custom skin you make can completely change in one or two updates if mojang so chooses to do an animation reveamp
+This approach does **not** modify the player geometry, but rather moves and resizes the players limbs.
 
-- SAA's do not work properly when using a custom animations pack like "Actions N Stuff"
+The term *3.5D* is used to describe the method as a "middle man" between proper vanilla and 4D skins.
 
+---
 
-**The Basics:**
+## Key Characteristics
 
-This whole system relys on one file: ``Skins.json``
-```
+* Uses **existing Mojang player animation assets**
+* No Molang queries or conditionals
+* No scripts, controllers, or state machines
+* No custom animation files
+* Compatible with standard player behavior
+* Works entirely within a skin pack
+
+---
+
+## Installation/Getting Started
+
+1. Download `Base.mcpack` from this repository.
+2. Import the pack into Minecraft Bedrock Edition.
+3. Open the pack contents and locate the `Skins.json` file.
+
+---
+
+## `Skins.json` Example
+
+```json
 {
     "format_version": "1.10.0",
     "serialize_name": "name",
@@ -41,18 +60,74 @@ This whole system relys on one file: ``Skins.json``
     ]
 }
 ```
-- This is a basic setup with all the animation targets that run continuously and are not action specific. Although, there are some animations that are both for example attack positions and rotations can target the torso and above continuously but also have special animation play on the player swinging/punching.
 
-**Animations 101:**
+## Geometry Usage
 
-- Animations can do the following: move, delete and reshape parts of the humanoid skin, as well as stop existing animations and stop them from happening no matter if they're continuous or conditional animations (like sneaking)
--  You can use `animation.witch.general` to stop an animation from happening OR you could use `animation.evoker.general` to remove limbs/body parts
-- Some animations can change how they look depending on what target you set them to.
+```json
+"geometry": "geometry.humanoid.custom"
+```
 
-**Theoretical:**
+In skin packs, geometry **does not define new models**. Its role is limited to:
 
-Previously I mentioned in the documentation that texture packs like "Actions N Stuff" Can cause the skin packs to not work properly, with that said it is theoretically possible one could make a custom animation, apply it in both a texture pack and have it registered to a target in a skin pack, to have a custom animation only you and your friends could see as long as they have the texture pack enabled with the skin selected.
+* Selecting **classic (thick) or slim arm** variants
+* Localizing player model variants
 
-**Patching?**
+You cannot:
 
-The chance of this getting patched is slim. As majority of servers have a built in skin anti-cheat and players can just disable non trusted skins, in their settings. But this doesnt mean mojang cant or wont revoke this feature from us if abused in a way they see unfit.
+* Add or remove bones
+* Change limb proportions
+* Modify the humanoid hierarchy
+* Introduce non-player geometry
+
+All structural aspects remain the standard Bedrock player model.
+
+---
+
+## Animation Bindings - The good stuff
+
+The `animations` object is the core of this method.
+
+Each entry maps a **skin animation slot** to an **existing player animation asset** that already exists in Bedrock.
+
+Example:
+
+```json
+"move.arms": "animation.react_idle"
+```
+
+This does **not** define a new animation. It simply instructs minecraft to bind that animation directly to the skin.
+
+---
+
+## Common Animation Channels
+
+| Channel              | Description                                |
+| -------------------- | ------------------------------------------ |
+| `humanoid_base_pose` | Base bind pose used for animation layering |
+| `move.arms`          | Arm motion while walking                   |
+| `move.legs`          | Leg motion while walking                   |
+| `holding`            | Item holding offsets                       |
+| `attack.positions`   | Arm positioning during attacks             |
+| `attack.rotations`   | Swing rotation motion                      |
+| `bob`                | Breathing-styled animation                 |
+| `cape`               | Cape physics                               |
+| `look_at_target`     | Head rotation                              |
+
+---
+
+## How to Hide Armor
+
+```json
+"enable_attachables": false
+"hide_armor": true
+```
+Please note, "enable attachables" also hides tridents or anything geometry based.
+---
+
+## Limitations
+
+* Player animation behavior cannot be altered unless you use custom animations via a texture pack
+* Bones/Limbs cannot be added, only removed
+* Invalid animation IDs fail silently
+
+---
