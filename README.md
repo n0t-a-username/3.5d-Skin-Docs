@@ -23,8 +23,8 @@ The term *3.5D* is used to describe the method as a "middle man" between proper 
 ## Installation/Getting Started
 
 1. Download `Base.mcpack` from this repository.
-2. Import the pack into Minecraft Bedrock Edition.
-3. Open the pack contents and locate the `Skins.json` file. This is where you'll be spending most of your time.
+2. Open the pack contents and locate the `Skins.json` file. This is where you'll be spending most of your time.
+3. Read the rest of this document and then have fun making skins!
 
 ---
 
