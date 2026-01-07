@@ -101,7 +101,7 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 | `cape`               | Cape physics                               |
 | `look_at_target`     | Head rotation                              |
 
-- Please note almost every animation channel in the player.entity.json file can be used inside the ``skins.json`` file. The list above only shows the most commonly used animation in this method of skin modifications. 
+- Please note almost every animation channel in the ``player.entity.json`` file can be used inside the ``skins.json`` file. The list above only shows the most commonly used animation in this method of skin modifications. 
 
 ---
 
