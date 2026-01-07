@@ -128,6 +128,5 @@ Please note, "enable attachables" also hides tridents or anything geometry based
 
 * Player animation behavior cannot be altered unless you use custom animations via a texture pack
 * Bones/Limbs cannot be added, only removed
-* Invalid animation IDs fail silently
 
 ---
