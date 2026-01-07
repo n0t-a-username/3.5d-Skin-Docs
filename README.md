@@ -121,8 +121,9 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 "enable_attachables": false
 "hide_armor": true
 ```
-Please note, "enable attachables" also hides tridents or anything geometry based.
+* Please note, "enable attachables" also hides tridents or anything geometry based.
 ---
+
 
 ## Other key Points
 
