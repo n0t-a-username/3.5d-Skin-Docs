@@ -66,19 +66,7 @@ The term *3.5D* is used to describe the method as a "middle man" between proper 
 "geometry": "geometry.humanoid.custom"
 ```
 
-In skin packs, geometry **does not define new models**. Its role is limited to:
-
-* Selecting **classic (thick) or slim arm** variants
-* Localizing player model variants
-
-You cannot:
-
-* Add or remove bones
-* Change limb proportions
-* Modify the humanoid hierarchy
-* Introduce non-player geometry
-
-All structural aspects remain the standard Bedrock player model.
+In 3.5D skin packs, geometry **does not define new models**. Its role is limited to selecting **classic (thick) or slim arm** variants
 
 ---
 
@@ -94,7 +82,7 @@ Example:
 "move.arms": "animation.react_idle"
 ```
 
-This does **not** define a new animation. It simply instructs minecraft to bind that animation directly to the skin.
+This does **not** define a new animation. It simply instructs minecraft to bind that animation directly to the skin instead of the defualt animation.
 
 ---
 
@@ -113,7 +101,7 @@ This does **not** define a new animation. It simply instructs minecraft to bind 
 | `cape`               | Cape physics                               |
 | `look_at_target`     | Head rotation                              |
 
-- Please note almost every animation channel in the player.entity.json file can be used inside the ``skins.json`` file.
+- Please note almost every animation channel in the player.entity.json file can be used inside the ``skins.json`` file. The list above only shows the most commonly used animation in this method of skin modifications. 
 
 ---
 
